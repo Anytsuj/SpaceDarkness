@@ -3,6 +3,7 @@ package tilegame.states;
 import java.awt.Graphics;
 
 import tilegame.Game;
+import tilegame.tilegame.Handler;
 
 public abstract class State {
 
@@ -15,10 +16,10 @@ public abstract class State {
 	public static State getState(){
 		return currentState;
 	}
-	protected Game game;
+	protected Handler handler;
 	
-	public State(Game game) {
-		this.game = game;
+	public State(Handler handler) {
+		this.handler = handler;
 	}
 	
 	public abstract void tick();

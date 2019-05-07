@@ -11,6 +11,10 @@ public static Tile pod2 = new pod2Tile(1);
 public static Tile pod3 = new pod3Tile(2);
 public static Tile sspn = new spnTile(3);
 public static Tile sspd = new spdTile(4);
+public static Tile bpldop = new bpdopTile(5);
+public static Tile bpldol = new bpdolTile(6);
+public static Tile bplnop = new bpnopTile(7);
+public static Tile bplnol = new bpnolTile(8);
 	
 	protected BufferedImage texture;
 	protected final int id;

@@ -3,39 +3,57 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import display.Display;
 import tilegame.gfx.Assets;
+import tilegame.input.MouseManager;
 import tilegame.states.GameState;
 import tilegame.states.State;
+import tilegame.tilegame.Handler;
 
 public class Game implements Runnable {
-
+	//val
 	private Display display;
-	public int width, height;
+	private int width, height;
 	public String title;
 	
+	//Thread and run
 	private boolean running = false;
 	private Thread thread;
 	
+	//Graph
 	private BufferStrategy bs;
 	private Graphics g;
 	
+	//mouse input
+	private MouseManager mousemanage;
+	
 	//States
 	private State gameState;
+	
+	//handl
+	private Handler handler;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		mousemanage = new MouseManager();
 	}
 	
 	private void init(){
 		display = new Display(title, width, height);
+
+		display.getFrame().addMouseMotionListener(mousemanage);
+		display.getFrame().addMouseListener(mousemanage);
+		display.getCanvas().addMouseMotionListener(mousemanage);
+		display.getCanvas().addMouseListener(mousemanage);
+		handler = new Handler(this);
 		Assets.init();
 		
-		gameState = new GameState(this);
+		gameState = new GameState(handler);
 		State.setState(gameState);
 	}
 	
 	private void tick(){
+		mousemanage.tick();
 		if(State.getState() != null)
 			State.getState().tick();
 	}
@@ -113,6 +131,18 @@ public class Game implements Runnable {
 			e.printStackTrace();
 		}
 	}
+	
+	public MouseManager getMouseManager() {
+		return mousemanage;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	
 	
 }
 

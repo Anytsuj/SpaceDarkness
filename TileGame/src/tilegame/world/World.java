@@ -2,18 +2,22 @@ package tilegame.world;
 
 import java.awt.Graphics;
 
+import tilegame.Game;
+import tilegame.tilegame.Handler;
 import tilegame.tiles.Tile;
 import tilegame.utils.Utils;
 
 public class World {
 
-
+	private Handler handler;
 	private int width, height;
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	
-	public World(String path){
+	public World(Handler handler,String path){
+		this.handler = handler;
 		loadWorld(path);
+		
 	}
 	
 	public void tick(){
