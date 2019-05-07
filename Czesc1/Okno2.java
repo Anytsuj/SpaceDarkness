@@ -70,6 +70,13 @@ public class Okno2 extends JFrame implements ActionListener{
 	    	BronDruga.setPreferredSize(new Dimension(87,11));
 	    	BronTrzecia.setPreferredSize(new Dimension(87,11));
 	    	
+	    	Zapis.setSize(73, 83);
+	    	Dzwiek.setSize(73, 83);
+	    	Pauza.setSize(73,83);
+	    	Wyjscie.setSize(73,83);
+	    	HP.setSize(377,108);
+	    	Plansza1.setSize(1512,672);
+	    	
 	    	Zapis.setBackground(Color.BLACK);
 			Zapis.setOpaque(true);
 			Zapis.setBorderPainted(false);

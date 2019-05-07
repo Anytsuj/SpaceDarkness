@@ -69,6 +69,13 @@ public class Okno1 extends JFrame implements ActionListener{
 		jezyk = new JButton (jezykk);
 		wyjdz = new JButton (wyjscie);
 		
+		nazwa.setSize(638, 147);
+		nowa_gra.setSize(269, 70);
+		wczytaj.setSize(269, 70);
+		dzwiek.setSize(269, 70);
+		jezyk.setSize(269, 70);
+		wyjdz.setSize(269, 70);
+		
 		//nie potrzebne na razie
 	//	nowa_gra.setActionCommand("Nowa Gra");
 	//	wczytaj.setActionCommand("Wczytaj");
@@ -144,12 +151,13 @@ public class Okno1 extends JFrame implements ActionListener{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//if()) {
 				nowa_gra.setIcon(newGame);
 				wczytaj.setIcon(load);
 				dzwiek.setIcon(sound);
 				jezyk.setIcon(language);
 				wyjdz.setIcon(exit);
-				
+				//}
 			}
 			
 		});
