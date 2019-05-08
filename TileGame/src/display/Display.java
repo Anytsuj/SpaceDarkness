@@ -13,6 +13,7 @@ public class Display {
 	private int width, height;
 	
 	public Display(String title, int width, int height){
+		
 		this.title = title;
 		this.width = width;
 		this.height = height;

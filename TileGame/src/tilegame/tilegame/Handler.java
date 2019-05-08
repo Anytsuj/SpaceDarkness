@@ -1,6 +1,7 @@
 package tilegame.tilegame;
 
 import tilegame.Game;
+import tilegame.input.KeyManager;
 import tilegame.input.MouseManager;
 import tilegame.world.World;
 
@@ -14,6 +15,10 @@ public class Handler {
 	
 	public MouseManager getMouseMager() {
 		return game.getMouseManager();
+	}
+	
+	public KeyManager getKeyManager() {
+		return game.getKeyManager();
 	}
 	
 	public int getWidth(){

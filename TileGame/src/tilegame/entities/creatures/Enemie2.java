@@ -9,6 +9,7 @@ import tilegame.tilegame.Handler;
 public class Enemie2 extends Creature{
 
 	private int health = 20;
+	private Handler handler;
 	public Enemie2(Handler handler,int health, float x, float y) {
 		super(handler, x, y,Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
 		this.handler = handler;

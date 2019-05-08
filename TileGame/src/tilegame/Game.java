@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import display.Display;
 import tilegame.gfx.Assets;
+import tilegame.input.KeyManager;
 import tilegame.input.MouseManager;
 import tilegame.states.GameState;
 import tilegame.states.State;
@@ -24,6 +25,7 @@ public class Game implements Runnable {
 	
 	//mouse input
 	private MouseManager mousemanage;
+	private KeyManager keymanager;
 	
 	//States
 	private State gameState;
@@ -36,11 +38,12 @@ public class Game implements Runnable {
 		this.height = height;
 		this.title = title;
 		mousemanage = new MouseManager();
+		keymanager = new KeyManager();
 	}
 	
 	private void init(){
 		display = new Display(title, width, height);
-
+		display.getFrame().addKeyListener(keymanager);
 		display.getFrame().addMouseMotionListener(mousemanage);
 		display.getFrame().addMouseListener(mousemanage);
 		display.getCanvas().addMouseMotionListener(mousemanage);
@@ -54,6 +57,7 @@ public class Game implements Runnable {
 	
 	private void tick(){
 		mousemanage.tick();
+		keymanager.tick();
 		if(State.getState() != null)
 			State.getState().tick();
 	}
@@ -134,6 +138,9 @@ public class Game implements Runnable {
 	
 	public MouseManager getMouseManager() {
 		return mousemanage;
+	}
+	public KeyManager getKeyManager() {
+		return keymanager;
 	}
 	
 	public int getWidth() {

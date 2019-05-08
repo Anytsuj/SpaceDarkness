@@ -6,5 +6,10 @@ public class Launcher {
 		Game game = new Game("Tile Game!", 1512, 756);
 		game.start();
 	}
+
+	public void start() {
+		Game game = new Game("Tile Game!", 1512, 756);
+		game.start();
+	}
 	
 }
